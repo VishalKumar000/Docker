@@ -1,0 +1,18 @@
+container is made using namespace technology
+
+container 
+    -> pid - process name generate
+    -> nat - network interface
+    -> ipc - inter process communincation 
+    -> mount
+    -> uts - unique stand sharing
+
+client - server arch
+
+start docker
+    sudo -i
+    docker info
+    service docker start
+    docker info 
+    docker version
+
