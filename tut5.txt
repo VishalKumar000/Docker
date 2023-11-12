@@ -1,0 +1,20 @@
+how to run already existing container
+    docker container start container_id
+
+how to stop already existing container
+    docker container stop container_id
+
+how to run docker in background
+    docker container run -d ubuntu sleep 40 (detach)
+    docker container run -d nginx
+
+how to run terminal in a container
+    docker container run -it ubuntu /bin/bash (interactive terminal)
+
+how to quit a terminal running inside a container
+    press ctrl + d
+    write exit
+
+container to run in bg after quiting from terminal running inside a container
+    docker container run -it ubuntu /bin/bash
+    press ctrl + p + q

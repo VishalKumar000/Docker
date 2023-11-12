@@ -1,0 +1,31 @@
+docker
+    - container module > contains all command that are related to container
+    - image module
+    - network module
+
+Management commands are parent command else other are child command
+
+docker ps (list all running container)
+docker container ls (list all container)
+docker image ls (list all images)
+docker network ls (list all network)
+
+container is running instance of image that are get from docker.hub
+
+docker --help |less
+docker container ls
+docker container ls -a (list all container)
+docker image ls
+docker network ls
+
+Making first container
+    docker pull ubuntu
+    docker container run ubuntu cat /etc/os-release
+    docker container run ubuntu sleep 10
+    docker container run nginx
+
+Removing single container
+    docker container rm container_id(first 3 unique char)
+
+Removing multiple container
+    docker container rm cont_id1 cont_id2

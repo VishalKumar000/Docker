@@ -3,7 +3,7 @@ container is made using namespace technology
 container 
     -> pid - process name generate
     -> nat - network interface
-    -> ipc - inter process communincation 
+    -> ipc - inter process communication
     -> mount
     -> uts - unique stand sharing
 
@@ -15,4 +15,3 @@ start docker
     service docker start
     docker info 
     docker version
-
