@@ -1,0 +1,13 @@
+TODO: Docker port mapping, Rename container, Restart container, Exec container
+
+Redirect from IPAddress:3600 -> xyz:80 | http://192.168.87.161:3600/ -> xyz:80 & name container
+    docker container run -d -p 3600:80 --name test1_web nginx
+
+Shell access to container (exec will run last command)
+    docker container exec -it container_id /bin/bash
+
+Rename Container
+    docker container rename container_id New_Container_Name
+
+Restart Container
+    docker container restart container_id

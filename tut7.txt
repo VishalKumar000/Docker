@@ -1,0 +1,16 @@
+TODO: what's going on inside container | seeing logs
+
+Finding logs
+    docker container logs container_id
+
+How to see Ip Address
+    ifconfig
+
+Check process running inside a container
+    docker container top container_id
+
+Check process running on OS
+    ps -aux
+
+Check Memory taken by container
+    docker container stats
