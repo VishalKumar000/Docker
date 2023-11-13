@@ -1,0 +1,11 @@
+TODO: How to push image on docker hub, image tag, image pull, docker login
+
+docker login
+
+Download Specific Version of Image
+    docker pull ubuntu:20.08
+
+Pushing Image to Docker
+    docker image tag sample_tree_git bakruk78/my_sample_t_g
+    docker push bakruk78/my_sample_t_g
+    docker pull bakruk78/my_sample_t_g

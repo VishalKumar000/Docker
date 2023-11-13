@@ -1,0 +1,24 @@
+TODO: Attach to running container, kill, wait, pause, unpause, prune, port
+
+docker container inspect container_id |less
+
+How to make detach container to run in current terminal
+    docker container attach container_id
+
+Kill a container | Achanak se Stop karna
+    docker container kill container_id
+
+Wait -> wait for container to stop & return status code
+    docker container wait container_id
+
+Pause | Unpause
+    docker container pause container_id
+    docker container unpause container_id
+
+Delete All stop Container
+    docker container prune
+
+Know port Mapping
+    docker container port container_id | container_name
+
+

@@ -1,0 +1,18 @@
+TODO: Export / Import Docker Container
+
+Container -> .tar -> Image
+    ↑                   ↓
+    ---------------------
+
+ls -lh
+
+Export Docker Container ( container to .tar )
+    docker container export container_id >File_Name.tar
+    docker container export container_id -o File_Name.tar
+
+Import Docker Container ( .tar to image )
+    docker image import File_Name.tar Image_Name
+
+    > uses
+        docker image ls
+        docker container run -it Image_Name /bin/bash

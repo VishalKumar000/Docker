@@ -1,0 +1,14 @@
+TODO: Layered Architecture and Dockerfiles
+
+Try to modify at bottom of Dockerfile b/c it will take value from cache
+Every line in Dockerfile is making commit
+
+Dockerfiles
+    vi Dockerfile
+        >   FROM ubuntu:latest
+        >   RUN apt-get update && apt-get install -y tree
+        >   RUN touch /tmp/1.txt
+        >   RUN touch /tmp/2.txt
+        >   RUN touch /tmp/4.txt
+    docker image build -t my_ubuntu:1 .
+    docker container run -itd my_ubuntu:1

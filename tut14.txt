@@ -1,0 +1,22 @@
+TODO: How to inspect remove, inspect, list and history for docker image
+
+docker image ls === docker images
+
+Print in Particular Format
+    docker image ls --format '{{.ID}} - {{.Repository}} - {{.Tag}}'
+
+History of Image
+    docker image history image_name
+
+Remove Image
+    docker container rm image_name
+    docker container rm -f image_name
+    docker rmi image_name
+
+Inspect Image
+    docker image inspect image_name
+
+Remove Unused Image
+    docker image prune
+
+

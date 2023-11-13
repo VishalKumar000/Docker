@@ -1,0 +1,11 @@
+TODO: How to Create docker image from running container ( docker commit )
+
+Container -> Image
+    ↑          ↓
+    ------------
+
+docker container run -itd ubuntu
+
+How to Create docker image from running container
+    docker container commit --author "Vishal Kumar" -m "this is a sample msg" container_id New_Image_Name
+

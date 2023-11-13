@@ -1,0 +1,14 @@
+TODO: Docker save/docker load. Diff between export and save & load &import
+
+Docker image save
+    it make .tar file from image
+    it will save all layer, version & tags
+
+Docker container image
+    it make .tar file from running container
+    it doesn't save layer, version & tags
+
+Docker Save
+    docker image save >file_name.tar ( image to .tar )
+    docker image load < file_name.tar ( .tar to image )
+

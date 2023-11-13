@@ -1,0 +1,13 @@
+TODO: Create docker container, diff docker container & copy file into container
+
+watch 'docker container diff container_id'
+
+Create Container
+    docker container create ubuntu sleep 40
+
+Difference Docker Container
+    docker container diff container_id
+
+Copy File Inside a Container
+    docker container cp file_name container_id:/
+    ( docker container cp ./Folder_Name container_id:/Folder_Name/)
