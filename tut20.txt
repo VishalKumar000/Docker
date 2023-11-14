@@ -1,0 +1,12 @@
+TODO: Dockerfile ( CMD )
+
+It doesn't work for me
+
+Only 1 CMD command allowed
+
+vi Dockerfile
+    > FROM ubuntu:latest
+    > LABEL name "Vishal Kumar"
+    > LABEL email "yadav11adu@gmail.com"
+    > RUN apt-get update && apt-get install -y openssh-server && apt-get install -y python3
+    > CMD ["sh"]

@@ -1,2 +1,26 @@
 TODO: Dockerfile (Label, Run, Env, Workdir)
 
+vi Dockerfile
+FROM ubuntu:latest
+LABEL name "Vishal Kumar"
+LABEL email "yadav11adu@gmail.com"
+ENV Name vishal
+ENV Pass 2023
+RUN pwd>/tmp/1stpwd.txt
+RUN cd /tmp ( cd doesn't change pwd )
+RUN pwd>/tmp/2ndpwd.txt
+WORKDIR /tmp
+RUN pwd>/tmp/3rdpwd.txt
+
+Label
+    docker image inspect image_name
+
+Env
+    Run container in -it
+    type env in terminal to show all env var
+
+Each new line in docker file doesn't relate to other files
+
+WORKDIR
+    to change dir in docker container
+

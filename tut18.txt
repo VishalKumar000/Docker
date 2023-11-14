@@ -1,0 +1,29 @@
+TODO: Dockerfile (add, copy, user) difference between copy and add in docker file
+
+docker container run -P -it image_name /bin/bash
+
+ADD User
+    vi Dockerfile
+        > FROM ubuntu:latest
+        > LABEL name "Vishal Kumar"
+        > LABEL email "yadav11adu@gmail.com"
+        > ENV NAME vishal
+        > ENV PASS 2023
+        > RUN apt-get update && apt-get install -y openssh-server && apt-get install -y python3
+        > RUN useradd -d /home/vishal -g root -G sudo -m -p $PASS $NAME
+        > RUN whoami > /tmp/1whoami.txt
+        > USER $NAME
+        > RUN whoami > /tmp/2whoami.txt
+
+
+Copy Data
+    vi Dockerfile
+        > FROM ubuntu:latest
+        > LABEL name "Vishal Kumar"
+        > LABEL email "yadav11adu@gmail.com"
+        > RUN mkdir -p /tmp/project
+        > COPY team4.jpg /tmp/project
+
+
+ADD team4.jpg /tmp/project              vs              COPY team4.jpg /tmp/project
+it will copy folder structure also                      it will copy .tar only

@@ -10,5 +10,5 @@ Dockerfiles
         >   RUN touch /tmp/1.txt
         >   RUN touch /tmp/2.txt
         >   RUN touch /tmp/4.txt
-    docker image build -t my_ubuntu:1 .
-    docker container run -itd my_ubuntu:1
+    docker image build -t my_ubuntu:version .
+    docker container run -itd my_ubuntu:version
