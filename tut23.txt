@@ -1,0 +1,29 @@
+#incomplete
+TODO: Docker Volume ( Docker Storage), mysql data persist in docker container [Volume]
+
+Save Data Inside Our Container
+
+There are two method
+    1. Bind Mount
+    2. Volume ( managed by docker )
+
+https://docs.docker.com/storage/
+
+Inspect Mysql Image
+    docker image inspect mysql (Check for Volumes)
+
+Inspect Container for Volume 
+    docker container inspect container_id (Check for Mount)
+
+Inspect Volume 
+    docker volume inspect volume_id
+
+Create MYSQL Container 
+    docker container run -d --name mysql1 -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql
+    mysql;
+    show databases;
+    create database vishal;
+
+Create Another MYSQL Container with old Volume  
+    docker container run -itd -v volume_id:/var/lib/mysql mysql
+

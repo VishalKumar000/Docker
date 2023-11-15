@@ -1,0 +1,16 @@
+TODO: Dockerfile ( Expose and create a SSH container using dockerfile )
+
+vi Dockerfile
+
+FROM ubuntu:latest
+ENV Name=Vishal
+ENV Password=2023
+RUN apt-get update && apt-get install -y openssh-server
+RUN mkdir /run/sshd 
+RUN useradd -m -d /home/vishal -g root -G sudo -p "$(openssl passwd -1 $Password)" $Name
+EXPOSE 22
+# EXPOSE 22 80  (multiple port expose)
+CMD [ "/usr/sbin/sshd", "-D" ]
+
+Expose Port of Container 
+    ssh Vishal@0.0.0.0 -p 32770

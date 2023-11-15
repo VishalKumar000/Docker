@@ -1,0 +1,12 @@
+TODO: Docker Bind mount
+
+Bind Mount is like global storage:
+    based on central arch
+    necessary absolute path are given
+
+
+docker container run -it -v $(pwd)/fake:/tmp/data ubuntu:latest bash
+
+docker container run -it -v /home/bakru_k78/fake:/tmp/data ubuntu:latest bash
+
+docker container run -it --mount type=bind,source=/home/bakru_k78/fake,target=/tmp/data ubuntu:latest bash

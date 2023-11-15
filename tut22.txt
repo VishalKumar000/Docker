@@ -1,0 +1,40 @@
+TODO: Dockerfile (Entrypoint) - script to run
+
+docker container run -itd image_name bash
+
+test.sh
+    #!/bin/bash
+    echo "this is first line"
+    echo "my name is $1"
+
+vi Dockerfile
+    FROM ubuntu:latest
+    RUN mkdir -p /var/run/sshd
+    RUN apt-get update
+    RUN apt-get install -y python3 tree
+
+    # ENTRYPOINT [ "tree" ]
+    # CMD [ "-v" ]
+
+    RUN mkdir -p /tmp
+    COPY test.sh /tmp/
+    RUN chmod +x /tmp/test.sh
+    ENTRYPOINT [ "/tmp/test.sh" ]
+
+chmod
+    Here are some common permission symbols used with chmod:
+    u - User/Owner
+    g - Group
+    o - Others
+    a - All (equivalent to ugo)
+
+    The basic permission symbols are:
+    r - Read
+    w - Write
+    x - Execute
+
+    full permissions
+    chmod a+rwx filename
+
+Run Script Container
+    docker container run -it my_ubuntu:5 pinkPonky

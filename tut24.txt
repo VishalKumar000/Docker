@@ -1,0 +1,5 @@
+TODO: Docker Volume
+
+if we give a docker name which don't exists in volume table then it will be created by running this command
+
+docker container run -itd -v abc:/var/lib/mysql --name mysql15 -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql

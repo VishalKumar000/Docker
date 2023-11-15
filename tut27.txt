@@ -1,0 +1,16 @@
+TODO: Docker Networking ( Bridge Network Overview )
+
+by default Bridge Network is connected inside new container
+
+
+List All Network
+    docker network ls
+
+Inspect Network 
+    docker network inspect bridge ( See all Container links) 
+
+Testing Internet inside container
+    docker container run -itd ubuntu:latest
+    apt-get update -y
+    apt-get install -y iputils-ping
+    ping 8.8.8.8 (it means that container is connected to Internet)
