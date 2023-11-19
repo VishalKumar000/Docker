@@ -1,0 +1,5 @@
+TODO: Docker Networking (Null Network, None Network)
+
+If we want a container that i attached to 0 Network
+
+docker container run -itd --network=none ubuntu:latest bash

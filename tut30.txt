@@ -1,0 +1,12 @@
+TODO: Docker Networking (Host Network)
+
+In Host Network we have only network to be shared like main os, but other than that all things are isolated like volume, images, container
+
+Host Network can only be one 
+
+docker container run -itd --network=host ubuntu
+docker container exec -it container_id bash
+ifconfig (same output as os ifconfig)
+
+
+docker network create -d host test

@@ -1,0 +1,2 @@
+TODO: Docker Registry With Basic Authentication
+

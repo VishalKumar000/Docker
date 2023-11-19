@@ -1,2 +1,10 @@
+#important
 TODO: Docker Networking (Bridge Network)
 
+Best Practice For new Project to have new Network
+
+    docker network create -d bridge test
+    docker container run -it --network test ubuntu:latest
+
+Inner Network communication between container is possible.
+But for Inter Network communication we have to map other container port to emp0c3 or NIC.
