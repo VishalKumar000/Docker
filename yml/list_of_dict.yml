@@ -1,0 +1,7 @@
+mobiles:
+  - name: NOKIA
+    ram: 4gb
+    price: 15000
+  - name: NOTHING
+    ram: 4gb
+    price: 15000

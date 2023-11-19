@@ -1,2 +1,33 @@
 TODO: Docker Registry With Basic Authentication
 
+sudo apt-get install apache2-utils
+docker run --entrypoint htpasswd httpd:2 -Bbn vishal 2023 > auth/htpasswd
+
+b -> run in bash mode
+n -> display output
+B -> bcrypt
+
+docker container run -d \
+    -p 5000:5000 \
+    --name registry_basic \
+    -v "$(pwd)"/auth:/auth \
+    -v "$(pwd)"/certs:/certs \
+    -e "REGISTRY_AUTH=htpasswd" \
+    -e "REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm" \
+    -e REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd \
+    -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt \
+    -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key \
+    registry
+
+docker login repo.docker.local:5000
+
+docker image push repo.docker.local:5000/mariadb:latest
+
+docker logout repo.docker.local:5000
+
+docker.hub -> docker registry -> docker engine
+                              -> docker engine
+                              -> docker engine
+                              -> docker engine  
+
+If the image is not available at registry server then redirect the pull request to Docker hub then the image pulled to the registry first then pulled to the other machines. So can it be achieved using registry as a pull through cache or a proxy server is used. It would be nice if you give a demo on that. 

@@ -1,0 +1,9 @@
+Mobiles
+  - name: c4
+    company: nokia
+  - name: v4
+    company: vivo
+    
+# data can be in array, key-value, dictionary
+# dictionary is unordered collection because here ordered doesn't matter, key - value must be same
+# array is ordered collection because vice-versa 

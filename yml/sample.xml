@@ -1,0 +1,10 @@
+<Mobiles>
+    <Mobile>
+        <name>c4</name>
+        <company>nokia</company>
+    </Mobile>
+    <Mobile>
+        <name>v4</name>
+        <company>vivo</company>
+    </Mobile>
+</Mobiles>

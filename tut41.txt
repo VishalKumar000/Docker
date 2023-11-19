@@ -1,0 +1,35 @@
+TODO: Create First docker-compose.yml file
+
+If we update docker-compose file then it will restart container which was changed
+we have different yml file for prod, dev
+
+docker container run -itd -p 8000:80 nginx
+
+Rename file
+    mv OLD_FILE_NAME NEW_FILE_NAME
+
+
+Custom Docker file
+    docker-compose -f FILE_NAME.yml up -d
+    docker-compose -f FILE_NAME.yml down
+
+Custom Docker file with json format also (yaml to json online)
+    docker-compose -f FILE_NAME.json up -d
+    docker-compose -f FILE_NAME.json down
+
+docker-compose.yml
+    version: '3.8'
+    services:
+    webapp1:
+        image: nginx
+        restart: always
+        ports:
+        - "8000:80"
+
+    webapp2:
+        image: nginx
+        restart: always
+        ports:
+        - "8003:80"
+
+    # 0.0.0.0:8000 port is map with container port :80

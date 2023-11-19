@@ -1,0 +1,55 @@
+TODO: Docker Compose : Overview, What , Why, How
+
+Best Practice to create a new network for each application
+
+Application has two tier
+    - load balancer tier
+    - Frontend tier
+    - Backed tier
+    - db tier
+
+DB Tier
+    docker container run --name MYSQL1 -e MYSQL_ROOT_PASSWORD=2023 -d mysql:latest
+
+Mysql container login
+    docker container exec -it df7 mysql -u root -p2023
+
+Web Tier 
+    docker container run --name WORDPRESS1 -e WORDPRESS_DB_HOST=172.17.0.2:3306 -e WORDPRESS_DB_USER=root -e WORDPRESS_DB_PASSWORD=2023 -d wordpress:latest
+
+docker-compose.yml
+    version: '3.3'
+    services:
+    db:
+        image: mysql:5.7
+        volumes:
+        - db_data:/var/lib/mysql
+        restart: always
+        environment: 
+        - MYSQL_ROOT_PASSWORD=somewordpress
+        - MYSQL_DATABASE=wordpress
+        - MYSQL_USER=wordpress
+        - MYSQL_PASSWORD=wordpress
+
+    wordpress:
+        depends_on:
+        - db
+        image: wordpress:latest
+        ports:
+        - "8000:80"  
+        restart: always
+        environment:
+        - WORDPRESS_DB_HOST=db:3306
+        - WORDPRESS_DB_USER=wordpress
+        - WORDPRESS_DB_PASSWORD=wordpress
+        - WORDPRESS_DB_NAME=wordpress
+
+    volumes:
+    db_data: {}
+
+start docker-compose.yml
+    docker-compose up -d 
+
+stop docker-compose.
+    docker-compose down
+    docker-compose down --volume ( to delete docker also )

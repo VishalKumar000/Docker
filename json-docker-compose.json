@@ -1,0 +1,15 @@
+{
+  "version": "3.8",
+  "services": {
+    "webapp1": {
+      "image": "nginx",
+      "restart": "always",
+      "ports": ["8000:80"]
+    },
+    "webapp2": {
+      "image": "nginx",
+      "restart": "always",
+      "ports": ["8003:80"]
+    }
+  }
+}
