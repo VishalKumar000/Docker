@@ -1,0 +1,26 @@
+#incomplete
+TODO: Docker Registry/Repository (secure)
+
+openssl req -newkey rsa:4096 -nodes -sha256 -keyout certs/domain.key -x509 -days 365 -out certs/domain.crt (repo.docker.local)
+cd /etc/docker/
+mkdir certs.d
+cd certs.d/
+mkdir repo.docker.local:5000
+cp certs/domain.crt /etc/docker/certs.d/repo.docker.local\:5000/ca.crt
+service docker restart
+docker container run -d -p 5000:5000 --name secure_registry -v $(pwd)/certs/:/certs -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key registry
+docker image tag mariadb repo.docker.local:5000/mariadb
+cat > /etc/hosts
+    ::1     ip6-localhost ip6-loopback
+    fe00::0 ip6-localnet
+    ff00::0 ip6-mcastprefix
+    ff02::1 ip6-allnodes
+    ff02::2 ip6-allrouters
+    185.199.108.133 raw.githubusercontent.com
+    49.43.154.123 repo.docker.local
+docker image push repo.docker.local:5000/mariadb:latest
+
+daemon.json
+{
+  "insecure-registries": ["https://repo.docker.local:5000"]
+}

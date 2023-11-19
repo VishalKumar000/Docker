@@ -1,0 +1,12 @@
+TODO: Docker Networking (Connect, Disconnect) || Connect a Container to Multiple Network
+
+eth0, eth1 are MIC Interface
+
+docker container run -itd --network=bridge ubuntu
+docker container exec -it container_id bash
+ifconfig
+
+Connect || Disconnect
+    docker network connect test container_id
+    docker network disconnect test container_id
+

@@ -1,0 +1,12 @@
+TODO: Docker Networking (DNS Enable)
+
+DNS is already enable inside custom network.
+which me that we can ping using container_name || container_id || IPAddress
+
+DNS isn't enable inside bridge network
+
+    docker network create test
+    docker container run -itd --network=test ubuntu * 2
+    docker container exec -itd container_id bash
+
+    ping another_container_id
