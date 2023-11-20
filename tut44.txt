@@ -1,0 +1,38 @@
+TODO: Docker Compose : Kill, exec, run, help, log, restart, pull.
+
+docker-compose kill
+    stop container immediately 
+
+docker-compose port webapp1 80
+    8000
+
+docker-compose logs -f
+
+docker-compose help
+
+docker-compose exec webapp1 bash
+    it will run bash command on same container
+
+docker-compose run webapp1 bash
+    it will run a new container in which bash command will be executed
+
+docker-compose restart
+
+docker-compose pull
+
+docker-compose file
+    version: '3.8'
+    services:
+    webapp1:
+        image: nginx
+        restart: always
+        ports:
+        - "8000:80"
+
+    webapp2:
+        image: nginx
+        restart: always
+        ports:
+        - "8003:80"
+
+    # 0.0.0.0:8000 port is map with container port :80

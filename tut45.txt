@@ -1,0 +1,27 @@
+TODO: Docker Compose : Scale, Top
+
+we can distribute load using nginx load balancer
+
+Scale (first we have to up docker-compose file then scale)
+    docker-compose up -d
+    docker-compose scale webapp1=10 webapp2=55
+
+docker-compose top 
+    it is telling process running inside container
+
+docker-compose.yml
+    version: '3.8'
+    services:
+    webapp1:
+        image: nginx
+        restart: always
+        # ports:
+        #   - "8000:80"
+
+    webapp2:
+        image: nginx
+        restart: always
+        # ports:
+        #   - "8003:80"
+
+    # 0.0.0.0:8000 port is map with container port :80

@@ -1,0 +1,23 @@
+TODO: Docker Compose : use build, image, dockerfile in Docker-Compose.yml
+
+docker-compose.yml
+    version: '3.8'
+    services:
+        webapp1:
+            build: . (it will run dockerfile first)
+            ports:
+            - "5000:5000"
+            image: "repo.docker.local/mypythonimage:1" (it will create image name)
+
+        redis:
+            image: "redis:alpine"
+
+Dockerfile
+    FROM python:3.4
+    ADD . /code
+    WORKDIR /code
+    RUN pip install -r requirements.txt
+    CMD [ "python", 'app.py' ]
+
+docker-compose up -d
+

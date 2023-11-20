@@ -1,0 +1,10 @@
+TODO: Docker Compose : Basic Command ( ps, pause, unpause )
+
+Dockerfile will define image
+docker-compose file will define level of images
+
+docker-compose ps   
+    list all container with status
+
+docker-compose pause
+docker-compose unpause

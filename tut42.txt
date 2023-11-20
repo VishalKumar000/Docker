@@ -1,0 +1,17 @@
+TODO: Docker Compose : Basic Command ( create, start, stop, rm, up, down)
+
+docker-compose --help
+
+docker-compose create
+    it will create container but without network
+
+docker-compose up --no-start
+    it will create container with network
+
+docker-compose start
+docker-compose stop
+docker-compose rm   -> it don't remove network
+docker-compose up -d (-d means detach)
+docker-compose -f file_name.txt up -d
+docker-compose down -d
+docker-compose -f file_name.txt down -d

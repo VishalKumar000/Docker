@@ -1,15 +1,10 @@
 version: '3.8'
 services:
   webapp1:
-    image: nginx
-    restart: always
+    build: .
     ports:
-      - "8000:80"
+      - "5000:5000"
+    image: "repo.docker.local/mypythonimage:1"
 
-  webapp2:
-    image: nginx
-    restart: always
-    ports:
-      - "8003:80"
-
-# 0.0.0.0:8000 port is map with container port :80
+  redis:
+    image: "redis:alpine"
