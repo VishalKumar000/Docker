@@ -1,0 +1,73 @@
+TODO: Docker Compose : variable, .env and include variable file in docker-compose.yml
+
+https://docs.docker.com/compose/compose-file/compose-file-v3/#service-configuration-reference
+
+For Small Env Var
+    version: '3.8'
+    services:
+        web:
+            image: mysql
+            ports:
+                - "8000:80"
+            environment:
+                - MYSQL_ALLOW_EMPTY_PASSWORD=true
+
+    docker-compose exec web env
+
+> For Generic Env Var
+
+version: '3.8'
+services:
+  web:
+    image: mysql
+    ports:
+      - "8000:80"
+    env_file:
+      - ./.env
+
+.env file
+Name=VishalKumar
+Age=20
+MYSQL_ALLOW_EMPTY_PASSWORD=true
+
+> flow of env variable
+
+.env -> docker-compose.yml -> Docker file 
+
+.env 
+PYTHON_VERSION=3.4-alpine
+
+docker-compose.yml
+    version: '3.8'
+    services:
+        webapp1:
+            build: 
+            context: .
+            dockerfile: Dockerfile
+            args:
+                - PYTHON_VERSION=${PYTHON_VERSION}
+            ports:
+            - "5000:5000"
+            image: "python-redis-1"
+            networks:
+            - appnetwork
+
+        redis:
+            image: "redis:alpine"
+            volumes:
+            - myredisdata:/data
+            networks:
+            - appnetwork
+
+        redis2:
+            image: "redis:alpine"
+            volumes:
+            - myredisdata2:/data
+            networks:
+            - appnetwork2
+    volumes:
+        myredisdata:
+        myredisdata2:
+    networks:
+        appnetwork:
+        appnetwork2:

@@ -1,10 +1,8 @@
 version: '3.8'
 services:
-  webapp1:
-    build: .
+  web:
+    image: mysql
     ports:
-      - "5000:5000"
-    image: "repo.docker.local/mypythonimage:1"
-
-  redis:
-    image: "redis:alpine"
+      - "8000:80"
+    env_file:
+      - ./.env

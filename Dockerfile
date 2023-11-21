@@ -1,4 +1,6 @@
-FROM python:3.4
+# FROM python:3.4
+ARG PYTHON_VERSION
+FROM python:${PYTHON_VERSION}
 ADD . /code
 WORKDIR /code
 RUN pip install -r requirements.txt

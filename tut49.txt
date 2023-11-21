@@ -1,0 +1,39 @@
+TODO: Docker Compose : Networks and Volumes in Docker-Compose.yml
+
+N number of Networks & Volumes can be created in docker-compose file
+
+docker-compose.yml
+    version: '3.8'
+    services:
+        webapp1:
+            build: 
+            context: .
+            dockerfile: Dockerfile
+            args:
+                - PYTHON_VERSION=3.4-alpine
+            ports:
+            - "5000:5000"
+            image: "python-redis-1"
+            networks:
+            - appnetwork
+
+        redis:
+            image: "redis:alpine"
+            volumes:
+            - myredisdata:/data
+            networks:
+            - appnetwork
+
+        redis2:
+            image: "redis:alpine"
+            volumes:
+            - myredisdata2:/data
+            networks:
+            - appnetwork2
+    volumes:
+        myredisdata:
+        myredisdata2:
+    # it will create volume & same goes with networks part
+    networks:
+        appnetwork:
+        appnetwork2:

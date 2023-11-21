@@ -1,0 +1,26 @@
+TODO: Docker Compose : args in Docker-Compose.yml
+
+docker-compose.yml
+    version: '3.8'
+    services:
+        webapp1:
+            build: 
+            context: .
+            dockerfile: Dockerfile # file name of docker file
+            args:
+                - PYTHON_VERSION=3.4-alpine
+            ports:
+            - "5000:5000"
+            image: "python-redis-1"
+
+        redis:
+            image: "redis:alpine"
+
+Dockerfile
+    # FROM python:3.4
+    ARG PYTHON_VERSION
+    FROM python:${PYTHON_VERSION}
+    ADD . /code
+    WORKDIR /code
+    RUN pip install -r requirements.txt
+    CMD [ "python", 'app.py' ]
