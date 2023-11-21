@@ -1,0 +1,15 @@
+TODO: Docker Swarm - Architecture Overview
+
+Master also work as Worker
+
+RAF Concurrency Algorithm these master are sync
+
+Master are preferred to be in odd number
+
+docker recommend max 7 node in a cluster
+
+number of master in a cluster = (n-1)/2
+
+Election between manager to become leader
+
+TLS - transfer layer security communication between master & worker.

@@ -1,0 +1,10 @@
+TODO: Docker Swarm - Installation
+
+> Manager initialization
+docker swarm init
+
+> List all node connected to a cluster
+docker node ls
+
+> join as worker 
+docker swarm join --token 
