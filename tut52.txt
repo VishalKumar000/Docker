@@ -8,3 +8,6 @@ docker node ls
 
 > join as worker 
 docker swarm join --token 
+
+> ASW Installation
+https://www.youtube.com/watch?v=W-DD3QPlRHo&ab_channel=GreatLearning

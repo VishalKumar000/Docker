@@ -1,0 +1,18 @@
+TODO: Docker Swarm : Add and remove node form the docker swarm
+
+docker swarm init --advertise-addr 2409:40d0:1037:25f5:33a4:8852:ef46:4285
+
+hostname -I
+
+sudo ufw allow ssh
+
+Generate Token for worker
+    docker swarm join-token worker
+
+Generate Token for manager
+    docker swarm join-token manager
+
+worker want to leave
+    manager >> docker node rm worker_id
+    worker >> docker swarm leave
+

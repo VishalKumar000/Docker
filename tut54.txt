@@ -1,0 +1,7 @@
+TODO: Docker Swarm - Swarm Node promote and Demote
+
+docker node inspect worker01
+
+docker node promote container_id || container_name
+docker node demote container_id || container_name
+
