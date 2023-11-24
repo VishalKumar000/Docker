@@ -1,1 +1,3 @@
 TODO: Docker Swarm - Docker Service
+
+https://www.youtube.com/watch?v=rrzwZYrK5Do&list=PL6XT0grm_Tfje2ySztzdhp0HmCjVj5P4z&index=53&ab_channel=GauravSharma
