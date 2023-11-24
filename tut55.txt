@@ -1,1 +1,13 @@
 TODO: Docker Swarm  - Docker Service(create,ls,logs)
+
+Create Service or Container in Swarm
+    docker service create -d --replicas=1 alpine ping 192.168.124.64
+
+List of all Service or Container 
+    docker service ls
+
+Inspect Service or Container 
+    docker service inspect puc
+
+Logs of service or Container 
+    docker service logs puc
