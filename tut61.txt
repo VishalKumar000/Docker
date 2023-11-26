@@ -1,0 +1,9 @@
+TODO: Docker Swarm - Docker Swarm Node Availability
+
+pause - it will maintain old container , don't receive more container 
+drain - will remove all container
+
+
+docker node update --help | grep avail
+    --availability string   Availability of the node ("active", "pause", "drain")
+docker node update --availability=pause vishal

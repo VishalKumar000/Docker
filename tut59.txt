@@ -1,0 +1,14 @@
+TODO: Docker Swarm - Docker Service Mode (Replicated, global)
+
+https://github.com/dockersamples/docker-swarm-visualizer
+
+Swarm visualizer
+    docker service create \
+    --name=viz \
+    --publish=8080:8080/tcp \
+    --constraint=node.role==manager \
+    --mount=type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock \
+    dockersamples/visualizer
+
+Mode - it will create one instance on worker & manager, used like antivirus instance on each machine
+    docker service create -d --mode=global alpine ping 8.8.8.8  

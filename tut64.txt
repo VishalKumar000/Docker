@@ -1,0 +1,17 @@
+TODO: Docker Swarm : Docker Overlay Networking
+
+Ingress Networking have inbuilt Ingress Networking.
+We can'nt attach container to By Default overlay network.
+
+https://www.youtube.com/watch?v=uoI4d0Ayorg&list=PL6XT0grm_Tfje2ySztzdhp0HmCjVj5P4z&index=60&ab_channel=GauravSharma
+
+Default Overlay Network
+    docker network create -d overlay test
+    docker container run -d --network=test imageName
+
+Attachable Overlay Network
+    docker network create -d overlay --attachable test1
+    docker container run -d --network=test1 imageName
+
+
+docker service create -d --network test --replicas 2 -p 9000:80 nginx

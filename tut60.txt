@@ -1,0 +1,22 @@
+TODO: Docker Swarm - Docker Swarm Label and Constraint
+
+Running specific to manager or worker
+    docker service create --replicas=3 --constraint="node.role=manager" alpine ping 192.168.124.161
+    docker service create --replicas=3 --constraint="node.role=worker" alpine ping 192.168.124.161
+
+Custom Label (we have to pre-define each label before using it)
+> method 1
+    docker node update --help | grep label
+        --label-add list        Add or update a node label ("key=value")
+        --label-rm list         Remove a node label if exists
+    docker node update --label-add="ssd=true" vishal (it can only be run on master)
+    docker service create --constraint="node.labels.ssd==true" -d --replicas=4 --name vishal04 alpine ping 0.0.0.0
+
+> method 2
+
+daemon.json in worker
+    {
+        "labels": ["name=vishalnode"]
+    }
+
+docker service create --constraint="engine.labels.name==vishalnode" -d --replicas=4 --name vishal04 alpine ping 0.0.0.0

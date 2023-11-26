@@ -1,0 +1,13 @@
+TODO: Docker Swarm - Docker Service scale, port mapping
+
+if we have expose port of service then it will be accessible by all manager & worker
+
+> Scale 
+    docker service scale gr=10 e9=20
+    docker service create -d --name vkumar_service --replicas 4 alpine ping 192.168.124.64
+    docker service create -d --name bakru_service --replicas 4 alpine ping 192.168.124.161
+
+> Port mapping in single container
+    docker service create -d --name bakru_port -p 8080:80 nginx
+    http://192.168.124.161:8080/        ->  accessed by master
+    http://192.168.124.64:8080/         ->  accessed by worker

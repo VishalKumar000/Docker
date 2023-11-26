@@ -1,0 +1,15 @@
+TODO: Docker Swarm - Docker Secret || Password Store
+
+Method to create Secret
+    1. string method 
+        docker secret create dbpass -
+    2. file method
+        docker secret create dbpass_from_file customPass.txt
+    docker secret ls
+
+Use Secret
+    docker service create -d --secret dbpass -e MYSQL_ROOT_PASSWORD_FILE=/run/secrets/dbpass mysql
+
+    > bash
+        cat /run/secrets/dbpass
+        mysql -u root -ptestpassword2023

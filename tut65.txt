@@ -1,0 +1,36 @@
+TODO: Docker Swarm : Docker Stack - if we want to run .yml file on cluster
+
+> Docker stack is just like docker compose in cluster.
+> while docker compose by default run on a particular node
+> Docker Services ls - it will show all container that are running in docker Swarm
+> Docker Stack Services ls - it will show all container inside a particular services
+
+docker-compose.yml
+version: '3.3'
+services:
+    db:
+        image: mysql:5.7
+        environment: 
+        - MYSQL_ROOT_PASSWORD=somewordpress
+        - MYSQL_DATABASE=wordpress
+        - MYSQL_USER=wordpress
+        - MYSQL_PASSWORD=wordpress
+
+    wordpress:
+        depends_on:
+        - db
+        image: wordpress:latest
+        ports:
+        - "8000:80"  
+        environment:
+        - WORDPRESS_DB_HOST=db:3306
+        - WORDPRESS_DB_USER=wordpress
+        - WORDPRESS_DB_PASSWORD=wordpress
+        - WORDPRESS_DB_NAME=wordpress
+
+docker stack deploy -c docker-compose.yml wP
+docker stack --help
+docker stack ls
+docker stack ps wP
+docker stack services wP
+docker stack rm wP

@@ -1,0 +1,9 @@
+TODO: Docker Swarm : Docker Events
+
+docker events 
+
+docker events --filter 'event=create'
+
+docker container run -itd ubuntu:14.04 ping 8.8.8.8
+docker events --filter 'container=container_id'
+docker events --filter 'image=image_id'

@@ -1,0 +1,8 @@
+TODO: Docker Swarm - Docker Swarm Service Create Options
+
+docker service create --help | grep reser
+docker service create --help | grep limit
+docker service create --help | grep update
+
+update service with new image   
+    docker service update --image nginx service_id
